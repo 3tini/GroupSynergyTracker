@@ -35,14 +35,14 @@ local function RemoveSpaces(str)
      return str:gsub("%s+", "")
 end
 
-function GST.IsStringInTable(string, table, caseSensitive)
-     for key, value in pairs(table) do
+function GST.IsStringInTable(str, tbl, caseSensitive)
+     for key, value in pairs(tbl) do
           if caseSensitive then
-               if value == string then
+               if value == str then
                     return true
                end
           else
-               if string.lower(value) == string.lower(string) then
+               if string.lower(value) == string.lower(str) then
                     return true
                end
           end

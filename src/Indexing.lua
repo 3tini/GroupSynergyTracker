@@ -12,11 +12,14 @@ function GST.IndexGroupMembers()
      else
           for i = 1, groupSize do -- For each member in your group
                local memberDisplayName = GetUnitDisplayName("group" .. i) -- The member's @DisplayName
-               groupMembers[GetUnitName("group" .. i)] = {
-                    ["displayName"] = memberDisplayName,
-                    ["groupID"] = "group" .. i,
-                    ["role"] = GetGroupMemberAssignedRole("group" .. i),
-               }
+               local memberCharacterName = GetUnitName("group" .. i)
+               if memberCharacterName ~= "" and memberCharacterName ~= nil then
+                    groupMembers[memberCharacterName] = {
+                         ["displayName"] = memberDisplayName,
+                         ["groupID"] = "group" .. i,
+                         ["role"] = GetGroupMemberAssignedRole("group" .. i),
+                    }
+               end
           end
      end
      GST.groupMembers = groupMembers
@@ -26,7 +29,7 @@ function GST.IndexTrackedPlayers()
      local trackedUsers = {}
      local unsortedUsers = {}
      local displayName = ""
-     local groupID = nil
+     local groupID = ""
 
      for key, value in pairs(GST.groupMembers) do
           displayName = value["displayName"]
