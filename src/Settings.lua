@@ -103,7 +103,7 @@ function GST.BuildSettingsTable()
                setFunc = function(value)
                     GST.sv.showTanks = value
                     GST.UpdateFrame()
-                end,
+               end,
                default = false,
                width = "full",
           },
@@ -143,7 +143,7 @@ function GST.BuildSettingsTable()
                          setFunc = function(value)
                               GST.sv.alternateFrameColors = value
                               GST.UpdateFrame()
-                          end,
+                         end,
                          default = false,
                          width = "full",
                     },
@@ -167,7 +167,7 @@ function GST.BuildSettingsTable()
                          setFunc = function(r, g, b)
                               GST.sv.healerColor = {r, g, b}
                               GST.UpdateFrame()
-                          end,
+                         end,
                          width = "full",
                          disabled = function() return not GST.sv.alternateFrameColors end,
                     },
@@ -214,6 +214,7 @@ function GST.BuildSettingsTable()
                               if value:gsub("%s+", "") ~= '' then
                                    value = DecorateDisplayName(value)
                                    value = value:gsub("%s+", "")
+                                   GSTBlacklistEditBox.editbox:SetText("")
 
                                    for k, v in pairs(GST.groupMembers) do
                                         if string.lower(value) == string.lower(v["displayName"]) then
@@ -230,6 +231,7 @@ function GST.BuildSettingsTable()
                               end
                          end,
                          width = "full",
+                         reference = "GSTBlacklistEditBox",
                     },
                     {
                          type = "dropdown",
