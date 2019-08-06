@@ -10,7 +10,7 @@ ChangeLog 1.4.2:
 
 GST.author = "@init3 [NA]"
 GST.name = "GroupSynergyTracker"
-GST.version = "1.4.3"
+GST.version = "1.4.4"
 GST.variableVersion = 2
 GST.trackedUsers = {}
 GST.groupMembers = {}
