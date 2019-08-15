@@ -10,7 +10,7 @@ ChangeLog 1.4.2:
 
 GST.author = "@init3 [NA]"
 GST.name = "GroupSynergyTracker"
-GST.version = "1.4.4"
+GST.version = "1.4.5"
 GST.variableVersion = 2
 GST.trackedUsers = {}
 GST.groupMembers = {}
@@ -349,12 +349,14 @@ function GST.OnMoveStop()
 end
 
 function GST.ReticleChanged(_, hidden)
-     for i = 1, #GST.frames do
-     	if GST.frames[i] ~= nil then
-               GST.frames[i]:SetHidden(hidden)
-               GST.frames[i]:SetMovable(not hidden)
-               GST.frames[i]:SetMouseEnabled(not hidden)
-     	end
+     if not GST.isMovable then
+          for i = 1, #GST.frames do
+               if GST.frames[i] ~= nil then
+                    GST.frames[i]:SetHidden(hidden)
+                    GST.frames[i]:SetMovable(not hidden)
+                    GST.frames[i]:SetMouseEnabled(not hidden)
+               end
+          end
      end
 end
 

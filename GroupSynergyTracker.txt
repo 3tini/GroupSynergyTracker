@@ -10,9 +10,12 @@
 ## Description: Tracks Synergy cooldowns for Group Members
 ## APIVersion: 100027 100028
 ## Author: |cff0096@init3 [NA]|r
-## Version: 1.4.4
+## Version: 1.4.5
 ## SavedVariables: GSTVars
-## DependsOn: LibAddonMenu-2.0
+## DependsOn: LibAddonMenu-2.0>=29
+
+; PackageReleaseDir: releases
+; PackageBumpFiles: src/Core.lua
 
 src/Core.lua
 src/Defaults.lua
